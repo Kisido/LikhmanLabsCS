@@ -1,0 +1,14 @@
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\bin\Debug\Lab1.exe
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\bin\Debug\Lab1.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.Properties.Resources.resources
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.exe
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\bin\Debug\Lab1.Fractions.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\bin\Debug\Lab1.Fractions.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.csproj.CopyComplete
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.AddFractionForm.resources
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab1\obj\Debug\Lab1.MainForm.resources
