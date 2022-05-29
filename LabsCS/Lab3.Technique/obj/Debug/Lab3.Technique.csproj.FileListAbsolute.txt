@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab3.Technique\bin\Debug\Lab3.Technique.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab3.Technique\bin\Debug\Lab3.Technique.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab3.Technique\obj\Debug\Lab3.Technique.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab3.Technique\obj\Debug\Lab3.Technique.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab3.Technique\obj\Debug\Lab3.Technique.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab3.Technique\obj\Debug\Lab3.Technique.pdb
