@@ -1,0 +1,5 @@
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab4.Techniques\bin\Debug\Lab4.Techniques.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab4.Techniques\bin\Debug\Lab4.Techniques.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab4.Techniques\obj\Debug\Lab4.Techniques.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab4.Techniques\obj\Debug\Lab4.Techniques.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab4.Techniques\obj\Debug\Lab4.Techniques.pdb
