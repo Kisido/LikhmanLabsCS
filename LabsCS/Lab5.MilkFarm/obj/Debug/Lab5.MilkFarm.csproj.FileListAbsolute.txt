@@ -1,0 +1,5 @@
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5.MilkFarm\bin\Debug\Lab5.MilkFarm.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5.MilkFarm\bin\Debug\Lab5.MilkFarm.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5.MilkFarm\obj\Debug\Lab5.MilkFarm.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5.MilkFarm\obj\Debug\Lab5.MilkFarm.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5.MilkFarm\obj\Debug\Lab5.MilkFarm.pdb

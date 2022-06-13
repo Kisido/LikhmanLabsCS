@@ -1,0 +1,14 @@
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\bin\Debug\Lab5.exe.config
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\bin\Debug\Lab5.exe
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\bin\Debug\Lab5.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.Properties.Resources.resources
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.exe
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.AddForm.resources
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.MainForm.resources
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\bin\Debug\Lab5.MilkFarm.dll
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\bin\Debug\Lab5.MilkFarm.pdb
+C:\Users\user\Desktop\Нужное\ДЗ\ВУЗ\Лабы\4 семестр\C#\LabsCS\Lab5\obj\Debug\Lab5.csproj.CopyComplete
