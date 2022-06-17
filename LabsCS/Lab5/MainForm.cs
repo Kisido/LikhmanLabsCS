@@ -20,7 +20,6 @@ namespace Lab5
         const int MAX_MECHANICS = 5;
         const int MAX_WAREHOUSES = 5;
         int countMechanics;
-        object warehouseLocker;
         object loaderLocker;
         List<loader> loaders;
         List<Warehouse> warehouses;
@@ -29,7 +28,6 @@ namespace Lab5
         private void InititalizeForm()
         {
             countMechanics = 0;
-            warehouseLocker = new object();
             loaderLocker = new object();
             loaders = new List<loader>();
             warehouses = new List<Warehouse>();
@@ -40,7 +38,7 @@ namespace Lab5
             TextBox.Invoke((MethodInvoker)delegate
             {
                 notifications.Add(message);
-                TextBox.Text += message + "\r\n\r\n";
+                TextBox.SelectedText += message + "\r\n\r\n";
             });
         }
 
@@ -57,7 +55,7 @@ namespace Lab5
         {
             float x = 50, y = 50;
             y += warehouses.Count * 100;
-            warehouses.Add(new Warehouse(Notification, x, y));
+            warehouses.Add(new Warehouse(Notification, loaders, loaderLocker, x, y));
             warehouses[warehouses.Count - 1].Name = InputName();
             Task.Run(warehouses[warehouses.Count - 1].Start);
             if (warehouses.Count >= MAX_WAREHOUSES)
@@ -71,8 +69,10 @@ namespace Lab5
             float x = 800, y = 50;
             y += countMechanics * 100;
             countMechanics++;
-            Mechanic newMechanic = new Mechanic(Notification, x, y, loaders, loaderLocker);
-            newMechanic.Name = InputName();
+            Mechanic newMechanic = new Mechanic(Notification, x, y, loaders, loaderLocker)
+            {
+                Name = InputName()
+            };
             Task.Run(newMechanic.Start);
             if (countMechanics >= MAX_MECHANICS)
             {
@@ -82,7 +82,6 @@ namespace Lab5
 
         private void AddLoader(loader lo)
         {
-            AddMechanicButton.Enabled = true;
             lo.Name = InputName();
             loaders.Add(lo);
             if (loaders.Count >= MAX_LOADERS)
@@ -97,23 +96,28 @@ namespace Lab5
 
         private void AddSlowLoaderButton_Click(object sender, System.EventArgs e)
         {
-            FastLoader lo = Activator.CreateInstance(typeof(FastLoader), new object[]
-            { (Action<string>)Notification, 400, 50 + loaders.Count * 100, warehouses, warehouseLocker }) as FastLoader;
+            SlowLoader lo = Activator.CreateInstance(typeof(SlowLoader), new object[]
+            { (Action<string>)Notification, 400, 50 + loaders.Count * 100 }) as SlowLoader;
             AddLoader(lo);
+
         }
 
         private void AddMediumLoaderButton_Click(object sender, System.EventArgs e)
         {
             MediumLoader lo = Activator.CreateInstance(typeof(MediumLoader), new object[]
-            { (Action<string>)Notification, 400, 50 + loaders.Count * 100, warehouses, warehouseLocker }) as MediumLoader;
+            { (Action<string>)Notification, 400, 50 + loaders.Count * 100 }) as MediumLoader;
             AddLoader(lo);
         }
 
         private void AddFastLoaderButton_Click(object sender, System.EventArgs e)
         {
-            SlowLoader lo = Activator.CreateInstance(typeof(SlowLoader), new object[]
-            { (Action<string>)Notification, 400, 50 + loaders.Count * 100, warehouses, warehouseLocker }) as SlowLoader;
+            FastLoader lo = Activator.CreateInstance(typeof(FastLoader), new object[]
+            { (Action<string>)Notification, 400, 50 + loaders.Count * 100 }) as FastLoader;
             AddLoader(lo);
         }
+
+        private void TextBox_Click(object sender, EventArgs e) => TextBox.SelectionLength = 0;
+
+        private void TextBox_MouseMove(object sender, MouseEventArgs e) => TextBox.SelectionLength = 0;
     }
 }

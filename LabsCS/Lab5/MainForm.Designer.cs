@@ -49,8 +49,10 @@ namespace Lab5
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(320, 678);
+            this.TextBox.Size = new System.Drawing.Size(455, 678);
             this.TextBox.TabIndex = 3;
+            this.TextBox.Click += new System.EventHandler(this.TextBox_Click);
+            this.TextBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseMove);
             // 
             // ToolStrip
             // 
@@ -61,7 +63,7 @@ namespace Lab5
             this.AddLoaderButton});
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Size = new System.Drawing.Size(349, 27);
+            this.ToolStrip.Size = new System.Drawing.Size(479, 27);
             this.ToolStrip.TabIndex = 4;
             this.ToolStrip.Text = "toolStrip1";
             // 
@@ -78,7 +80,6 @@ namespace Lab5
             // AddMechanicButton
             // 
             this.AddMechanicButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AddMechanicButton.Enabled = false;
             this.AddMechanicButton.Image = ((System.Drawing.Image)(resources.GetObject("AddMechanicButton.Image")));
             this.AddMechanicButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddMechanicButton.Name = "AddMechanicButton";
@@ -124,7 +125,7 @@ namespace Lab5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 723);
+            this.ClientSize = new System.Drawing.Size(479, 723);
             this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.TextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
