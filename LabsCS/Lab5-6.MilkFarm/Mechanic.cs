@@ -8,8 +8,6 @@ namespace Lab5_6.MilkFarm
 {
     public class Mechanic : MovingObject
     {
-        public Mechanic(Action<string> notification, double defaultX, double defaultY) : base(notification, defaultX, defaultY) { }
-
         public Mechanic(Action<string> notification, double defaultX, double defaultY, List<loader> lo, object loLo) : base(notification, defaultX, defaultY)
         {
             loaders = lo;
@@ -18,19 +16,18 @@ namespace Lab5_6.MilkFarm
 
         private readonly List<loader> loaders;
         private readonly object loaderLocker;
-
-        loader brokeLoader;
+        loader brokenLoader;
 
         void Repair()
         {
             if (HasCome())
             {
-                Notification("Механик " + Name + " чинит погрузчик " + brokeLoader.Name);
-                Task.Delay(3000);
-                brokeLoader.IsBroke = false;
-                brokeLoader.IsLocked = false;
-                Notification("Погрузчик " + brokeLoader.Name + " починен");
-                Notification("Механик " + Name + " починил погрузчик " + brokeLoader.Name);
+                Notification("Механик " + Name + " чинит погрузчик " + brokenLoader.Name);
+                Task.Delay(3000).Wait();
+                brokenLoader.IsBroke = false;
+                brokenLoader.IsLocked = false;
+                Notification("Погрузчик " + brokenLoader.Name + " починен");
+                Notification("Механик " + Name + " починил погрузчик " + brokenLoader.Name);
                 CurrentTask = null;
                 IsLocked = false;
                 MoveToX = defaultX;
@@ -44,15 +41,15 @@ namespace Lab5_6.MilkFarm
             
             lock (loaderLocker)
             {
-                brokeLoader = loaders.FirstOrDefault(lo => lo.IsBroke && !lo.IsWaitingMech);
-                if (brokeLoader != null)
+                brokenLoader = loaders.FirstOrDefault(lo => lo.IsBroke && !lo.IsWaitingMech);
+                if (brokenLoader != null)
                 {
-                    brokeLoader.IsWaitingMech = true;
-                    MoveToX = brokeLoader.X;
-                    MoveToY = brokeLoader.Y;
+                    brokenLoader.IsWaitingMech = true;
+                    MoveToX = brokenLoader.X;
+                    MoveToY = brokenLoader.Y;
                     IsLocked = true;
                     CurrentTask = Repair;
-                    Notification("Механик " + Name + " пошёл чинить погрузчик " + brokeLoader.Name);
+                    Notification("Механик " + Name + " пошёл чинить погрузчик " + brokenLoader.Name);
                 }
             }
         }

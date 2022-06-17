@@ -7,17 +7,18 @@ namespace Lab5_6
 {
     class ObjectDrawer
     {
-        Bitmap bitmap;
-        private Graphics graphics;
-        Timer timer;
+        private readonly Bitmap bitmap;
+        private readonly Graphics graphics;
+        private readonly Timer timer;
 
-        public ObjectDrawer(PictureBox pictureBox, Image backgroundImage, Font textFont, 
-            List<Object> objects, object objectsLocker, List<ViewModel> models, object modelsLocker)
+        public ObjectDrawer(PictureBox pictureBox, Image backgroundImage, List<Object> objects, object objectsLocker, List<ViewModel> models, object modelsLocker)
         {
             bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
             graphics = Graphics.FromImage(bitmap);
-            timer = new Timer();
-            timer.Interval = 30;
+            timer = new Timer
+            {
+                Interval = 30
+            };
             timer.Tick += new EventHandler((obj, e) =>
             {
                 graphics.Clear(Color.White);

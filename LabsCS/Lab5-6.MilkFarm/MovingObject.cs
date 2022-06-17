@@ -5,15 +5,15 @@ namespace Lab5_6.MilkFarm
 {
     public abstract class MovingObject : Model
     {
-        const double MAX_SPEED = 4;
+        const double MAX_SPEED = 3;
 
-        protected Action CurrentTask;
+        public Action CurrentTask;
 
-        protected double defaultX, defaultY;
+        public double defaultX, defaultY;
 
-        public double MoveToX { get; set; }
+        public double MoveToX { get; internal set; }
         
-        public double MoveToY { get; set; }
+        public double MoveToY { get; internal set; }
 
         public string Name { get; set; }
 

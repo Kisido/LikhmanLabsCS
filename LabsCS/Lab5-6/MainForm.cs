@@ -21,12 +21,14 @@ namespace Lab5_6
         const int MAX_LOADERS = 5;
         const int MAX_MECHANICS = 5;
         const int MAX_WAREHOUSES = 5;
+
         int countMechanics;
         List<Object> viewObjects;
+        List<Mechanic> mechanics;
         object viewObjectLocker;
         List<ViewModel> viewModels;
         object viewModelsLocker;
-        object warehouseLocker;
+        object mechanicLocker;
         object loaderLocker;
         List<loader> loaders;
         List<Warehouse> warehouses;
@@ -41,13 +43,13 @@ namespace Lab5_6
             viewObjectLocker = new object();
             viewModels = new List<ViewModel>();
             viewModelsLocker = new object();
-            warehouseLocker = new object();
+            mechanicLocker = new object();
             loaderLocker = new object();
+            mechanics = new List<Mechanic>();
             loaders = new List<loader>();
             warehouses = new List<Warehouse>();
             notifications = new List<string>();
-            drawer = new ObjectDrawer(PictureBox, Properties.Resources.Background, new Font(TextBox.Font.FontFamily, 10f, TextBox.Font.Style),
-                viewObjects, viewObjectLocker, viewModels, viewModelsLocker);
+            drawer = new ObjectDrawer(PictureBox, Properties.Resources.Background, viewObjects, viewObjectLocker, viewModels, viewModelsLocker);
             drawer.Start();
         }
 
@@ -56,7 +58,7 @@ namespace Lab5_6
             TextBox.Invoke((MethodInvoker)delegate
             {
                 notifications.Add(message);
-                TextBox.Text += message + "\r\n\r\n";
+                TextBox.SelectedText += message + "\r\n\r\n";
             });
         }
 
@@ -75,7 +77,7 @@ namespace Lab5_6
 
             y += warehouses.Count() * 100;
 
-            warehouses.Add(new Warehouse(Notification, x, y));
+            warehouses.Add(new Warehouse(Notification, loaders, loaderLocker, x, y));
 
             lock (viewObjectLocker)
             {
@@ -98,10 +100,17 @@ namespace Lab5_6
             y += countMechanics * 100;
             countMechanics++;
 
-            Mechanic newMechanic = new Mechanic(Notification, x, y, loaders, loaderLocker);
-            newMechanic.Name = InputName();
+            Mechanic newMechanic = new Mechanic(Notification, x, y, loaders, loaderLocker)
+            {
+                Name = InputName()
+            };
 
-            lock (viewModelsLocker)
+            lock (mechanicLocker)
+            {
+                mechanics.Add(newMechanic);
+            }
+
+            lock (viewModels)
             {
                 Image img = new Bitmap(Properties.Resources.Mechanic, 100, 100);
                 viewModels.Add(new ViewModel(newMechanic, img, x, y));
@@ -119,7 +128,6 @@ namespace Lab5_6
         {
             float x = 400, y = 50;
             y += loaders.Count * 100;
-            AddMechanicButton.Enabled = true;
             lo.Name = InputName();
             loaders.Add(lo);
 
@@ -142,23 +150,45 @@ namespace Lab5_6
 
         private void AddSlowLoaderButton_Click(object sender, System.EventArgs e)
         {
-            FastLoader lo = Activator.CreateInstance(typeof(FastLoader), new object[]
-            { (Action<string>)Notification, 400, 50 + loaders.Count * 100, warehouses, warehouseLocker }) as FastLoader;
+            SlowLoader lo = Activator.CreateInstance(typeof(SlowLoader), new object[]
+            { (Action<string>)Notification, 400, 50 + loaders.Count * 100 }) as SlowLoader;
             AddLoader(lo);
         }
 
         private void AddMediumLoaderButton_Click(object sender, EventArgs e)
         {
             MediumLoader lo = Activator.CreateInstance(typeof(MediumLoader), new object[]
-            { (Action<string>)Notification, 400, 50 + loaders.Count * 100, warehouses, warehouseLocker }) as MediumLoader;
+            { (Action<string>)Notification, 400, 50 + loaders.Count * 100 }) as MediumLoader;
             AddLoader(lo);
         }
 
         private void AddFastLoaderButton_Click(object sender, EventArgs e)
-        {
-            SlowLoader lo = Activator.CreateInstance(typeof(SlowLoader), new object[]
-            { (Action<string>)Notification, 400, 50 + loaders.Count * 100, warehouses, warehouseLocker }) as SlowLoader;
+        {   
+            FastLoader lo = Activator.CreateInstance(typeof(FastLoader), new object[]
+            { (Action<string>)Notification, 400, 50 + loaders.Count * 100 }) as FastLoader;
             AddLoader(lo);
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            drawer.Stop();
+
+            foreach (loader lo in loaders)
+            {
+                lo.IsCanceled = true;
+            }
+
+            foreach (ViewModel mo in viewModels)
+            {
+                if (mo is ViewModel)
+                {
+                    mo.Model.IsCanceled = true;
+                }
+            }
+        }
+
+        private void TextBox_MouseMove(object sender, MouseEventArgs e) => TextBox.SelectionLength = 0;
+
+        private void TextBox_Click(object sender, EventArgs e) => TextBox.SelectionLength = 0;
     }
 }

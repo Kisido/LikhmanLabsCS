@@ -69,7 +69,6 @@ namespace Lab5_6
             // AddMechanicButton
             // 
             this.AddMechanicButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AddMechanicButton.Enabled = false;
             this.AddMechanicButton.Image = ((System.Drawing.Image)(resources.GetObject("AddMechanicButton.Image")));
             this.AddMechanicButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddMechanicButton.Name = "AddMechanicButton";
@@ -129,6 +128,8 @@ namespace Lab5_6
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBox.Size = new System.Drawing.Size(320, 678);
             this.TextBox.TabIndex = 2;
+            this.TextBox.Click += new System.EventHandler(this.TextBox_Click);
+            this.TextBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseMove);
             // 
             // MainForm
             // 
@@ -144,6 +145,7 @@ namespace Lab5_6
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();

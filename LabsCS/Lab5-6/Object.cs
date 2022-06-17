@@ -10,8 +10,6 @@ namespace Lab5_6
 
         public Image Image { get; set; }
 
-        public Object(Image image) => Image = image;
-
         public Object(Image image, double x, double y)
         {
             Image = image;
